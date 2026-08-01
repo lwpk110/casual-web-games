@@ -1,5 +1,7 @@
 import { ui } from './core/ui.js';
 import { storage } from './core/storage.js';
+import { initSuikaPixiGame } from './games/suika/index-pixi.js';
+import { initVillagePixiGame } from './games/village/index-pixi.js';
 import { initVillageGame } from './games/village/index.js';
 import { initSuikaGame } from './games/suika/index.js';
 import { initPhaserShooterGame } from './games/phaser-shooter/index.js';
@@ -9,6 +11,26 @@ import { init2048Game } from './games/2048/index.js';
 import { initMemoryGame } from './games/memory/index.js';
 
 const GAMES = [
+  {
+    id: 'suika-pixi',
+    title: '合成大西瓜 (Pixi.js HD 视网膜版)',
+    category: 'puzzle',
+    badge: '💎 Pixi WebGL 高清',
+    bgClass: 'fusion-bg',
+    icon: '🪐',
+    desc: '基于全球顶级 2D WebGL 引擎 Pixi.js 重构！开启视网膜级 (High-DPI 2x/3x) 重采样与抗锯齿，全屏绝无模糊！',
+    initFn: initSuikaPixiGame
+  },
+  {
+    id: 'village-pixi',
+    title: '日出村庄 (Pixi.js HD 视网膜版)',
+    category: 'casual',
+    badge: '💎 Pixi WebGL 高清',
+    bgClass: 'snake-bg',
+    icon: '👨‍🌾',
+    desc: '基于 Pixi.js WebGL 高清引擎重构！能量探险、资源搜集、地图解锁与破旧木桥修复，全屏极其清晰。',
+    initFn: initVillagePixiGame
+  },
   {
     id: 'village',
     title: '日出村庄：农场探险 (Sunrise Village)',
