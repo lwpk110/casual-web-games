@@ -1,5 +1,6 @@
 import { ui } from './core/ui.js';
 import { storage } from './core/storage.js';
+import { initSuikaGame } from './games/suika/index.js';
 import { initPhaserShooterGame } from './games/phaser-shooter/index.js';
 import { initSurvivorGame } from './games/survivor/index.js';
 import { initSnakeGame } from './games/snake/index.js';
@@ -7,6 +8,16 @@ import { init2048Game } from './games/2048/index.js';
 import { initMemoryGame } from './games/memory/index.js';
 
 const GAMES = [
+  {
+    id: 'suika',
+    title: '合成大西瓜 (Suika Planet Merge)',
+    category: 'puzzle',
+    badge: '🔥 现象爆款',
+    bgClass: 'fusion-bg',
+    icon: '🪐',
+    desc: '复刻全球数亿播放的现象级爆款！控制 Q 弹球体物理碰撞下落，从微尘一路融合成太阳与终极黑洞。',
+    initFn: initSuikaGame
+  },
   {
     id: 'phaser-shooter',
     title: '赛博星际战机 (Phaser 3)',

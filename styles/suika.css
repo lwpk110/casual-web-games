@@ -1,0 +1,102 @@
+/* Suika Planet Merge Game Styles */
+
+.suika-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  user-select: none;
+}
+
+.suika-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 440px;
+  background: rgba(10, 12, 22, 0.7);
+  border: 1px solid var(--border-glass);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 0.75rem;
+}
+
+.next-preview-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.next-preview-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 10px var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #000;
+}
+
+.suika-container-box {
+  position: relative;
+  width: 440px;
+  height: 560px;
+  background: linear-gradient(180deg, #090c17 0%, #05070e 100%);
+  border: 2px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.8), 0 15px 40px rgba(0, 240, 255, 0.15);
+  overflow: hidden;
+}
+
+canvas.suika-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: crosshair;
+}
+
+.danger-line-indicator {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, #ff007a, #ff007a 10px, transparent 10px, transparent 20px);
+  box-shadow: 0 0 10px #ff007a;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.7;
+}
+
+.danger-warning-pulse {
+  animation: dangerPulse 0.5s infinite alternate;
+}
+
+@keyframes dangerPulse {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; box-shadow: 0 0 20px #ff007a; }
+}
+
+.combo-popup {
+  position: absolute;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.8rem;
+  background: var(--gradient-fire);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+  animation: floatCombo 0.8s ease-out forwards;
+  z-index: 20;
+}
+
+@keyframes floatCombo {
+  0% { transform: scale(0.5) translateY(0); opacity: 1; }
+  50% { transform: scale(1.3) translateY(-20px); opacity: 1; }
+  100% { transform: scale(1) translateY(-40px); opacity: 0; }
+}
