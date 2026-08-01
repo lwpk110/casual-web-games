@@ -17,8 +17,14 @@ class UIManager {
     this.closeBtn = document.getElementById('btn-close-modal');
     this.soundBtn = document.getElementById('btn-toggle-sound');
 
+    this.fullscreenBtn = document.getElementById('btn-fullscreen-modal');
+
     if (this.closeBtn) {
       this.closeBtn.addEventListener('click', () => this.closeModal());
+    }
+
+    if (this.fullscreenBtn) {
+      this.fullscreenBtn.addEventListener('click', () => this.toggleFullscreen());
     }
 
     if (this.modalOverlay) {
@@ -29,6 +35,17 @@ class UIManager {
       });
     }
 
+    document.addEventListener('fullscreenchange', () => {
+      const isFS = !!document.fullscreenElement;
+      if (this.fullscreenBtn) {
+        this.fullscreenBtn.textContent = isFS ? '🗗' : '⛶';
+        this.fullscreenBtn.title = isFS ? '退出全屏' : '切换全屏';
+      }
+      if (this.modalOverlay) {
+        this.modalOverlay.classList.toggle('is-fullscreen', isFS);
+      }
+    });
+
     if (this.soundBtn) {
       this.soundBtn.addEventListener('click', () => {
         const isMuted = sound.toggleMute();
@@ -38,9 +55,28 @@ class UIManager {
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && this.modalOverlay && this.modalOverlay.classList.contains('active')) {
-        this.closeModal();
+        if (!document.fullscreenElement) {
+          this.closeModal();
+        }
       }
     });
+  }
+
+  toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      const target = this.modalOverlay || document.documentElement;
+      if (target.requestFullscreen) {
+        target.requestFullscreen().catch(err => console.warn('Fullscreen error:', err));
+      } else if (target.webkitRequestFullscreen) {
+        target.webkitRequestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen().catch(err => console.warn('Exit Fullscreen error:', err));
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      }
+    }
   }
 
   openModal(title, renderFn, cleanupFn) {
