@@ -1,5 +1,6 @@
 import { ui } from './core/ui.js';
 import { storage } from './core/storage.js';
+import { initMinimartGame } from './games/minimart/index.js';
 import { initPhaserDeluxeGame } from './games/phaser-deluxe/index.js';
 import { initSuikaPixiGame } from './games/suika/index-pixi.js';
 import { initVillagePixiGame } from './games/village/index-pixi.js';
@@ -12,6 +13,16 @@ import { init2048Game } from './games/2048/index.js';
 import { initMemoryGame } from './games/memory/index.js';
 
 const GAMES = [
+  {
+    id: 'minimart',
+    title: '我的迷你超市 (My Mini Mart)',
+    category: 'casual',
+    badge: '🌟 YouTube 爆款',
+    bgClass: 'snake-bg',
+    icon: '🛒',
+    desc: '深度复刻 YouTube Playables 热游 My Mini Mart！店长采摘西红柿与苹果，货架自动补货，收银台排队结账与金币地垫超市扩建。',
+    initFn: initMinimartGame
+  },
   {
     id: 'phaser-deluxe',
     title: '赛博星际雷霆：豪华版 (Phaser 3 旗舰版)',
