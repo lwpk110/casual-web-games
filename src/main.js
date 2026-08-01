@@ -1,5 +1,6 @@
 import { ui } from './core/ui.js';
 import { storage } from './core/storage.js';
+import { initPhaserDeluxeGame } from './games/phaser-deluxe/index.js';
 import { initSuikaPixiGame } from './games/suika/index-pixi.js';
 import { initVillagePixiGame } from './games/village/index-pixi.js';
 import { initVillageGame } from './games/village/index.js';
@@ -11,6 +12,16 @@ import { init2048Game } from './games/2048/index.js';
 import { initMemoryGame } from './games/memory/index.js';
 
 const GAMES = [
+  {
+    id: 'phaser-deluxe',
+    title: '赛博星际雷霆：豪华版 (Phaser 3 旗舰版)',
+    category: 'action',
+    badge: '👑 Phaser3 旗舰',
+    bgClass: 'fusion-bg',
+    icon: '⚡',
+    desc: '深度采用 Phaser 3 WebGL 引擎！拥有多 Scene 场景流、Arcade 物理弹幕、视差星云、巨型 BOSS 战与相机震屏特效。',
+    initFn: initPhaserDeluxeGame
+  },
   {
     id: 'suika-pixi',
     title: '合成大西瓜 (Pixi.js HD 视网膜版)',
