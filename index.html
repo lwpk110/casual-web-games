@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casual Web Games Studio - 炫彩休闲网页游戏平台</title>
+  <meta name="description" content="Casual Web Games Studio 专注提供精品网页休闲游戏合集，包括霓虹贪吃蛇、2048炫彩版、记忆连连看等，免费即开即玩。">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/game-container.css">
+</head>
+<body>
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+
+  <div id="app">
+    <!-- Header Navigation -->
+    <header class="navbar">
+      <a href="#" class="brand" id="brand-link">
+        <div class="brand-icon">🎮</div>
+        <span class="brand-title">GAME STUDIO</span>
+      </a>
+      <div class="nav-actions">
+        <button class="btn-icon" id="btn-toggle-sound" title="切换音效" aria-label="Toggle Sound">🔊</button>
+        <a href="https://github.com/lwpk110/casual-web-games" target="_blank" class="btn-icon" title="GitHub 仓库" aria-label="GitHub Repo">⭐</a>
+      </div>
+    </header>
+
+    <!-- Main Content Hub -->
+    <main>
+      <section class="hero-section">
+        <div class="hero-tag">✨ CASUAL WEB GAMES HUB</div>
+        <h1 class="hero-title">精品 <span>休闲网页游戏</span> 工作室</h1>
+        <p class="hero-desc">沉浸式暗黑霓虹风格，零加载即开即玩。包含经典街机、烧脑益智与记忆力锻炼多重玩法！</p>
+      </section>
+
+      <!-- Category Filter Bar -->
+      <nav class="filter-bar" aria-label="Game Filter Navigation">
+        <button class="filter-btn active" data-category="all" id="filter-all">✨ 全部游戏</button>
+        <button class="filter-btn" data-category="action" id="filter-action">🐍 动作街机</button>
+        <button class="filter-btn" data-category="puzzle" id="filter-puzzle">🧩 烧脑益智</button>
+        <button class="filter-btn" data-category="casual" id="filter-casual">🃏 轻松记忆</button>
+      </nav>
+
+      <!-- Games Grid Container -->
+      <section class="games-grid" id="games-grid">
+        <!-- Dynamically rendered game cards -->
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Casual Web Games Studio · Open Source on <a href="https://github.com/lwpk110/casual-web-games" target="_blank">GitHub</a></p>
+    </footer>
+  </div>
+
+  <!-- Game Modal Container -->
+  <div class="game-overlay" id="game-overlay" role="dialog" aria-modal="true">
+    <div class="game-modal">
+      <div class="game-modal-header">
+        <div class="modal-game-info">
+          <span style="font-size: 1.5rem">🎮</span>
+          <h2 class="modal-game-title" id="modal-game-title">游戏加载中...</h2>
+        </div>
+        <button class="btn-icon" id="btn-close-modal" aria-label="Close Game">✕</button>
+      </div>
+      <div class="game-modal-content" id="game-modal-content">
+        <!-- Game canvas / elements rendered here -->
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
