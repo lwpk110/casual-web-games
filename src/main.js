@@ -1,5 +1,6 @@
 import { ui } from './core/ui.js';
 import { storage } from './core/storage.js';
+import { initVillageGame } from './games/village/index.js';
 import { initSuikaGame } from './games/suika/index.js';
 import { initPhaserShooterGame } from './games/phaser-shooter/index.js';
 import { initSurvivorGame } from './games/survivor/index.js';
@@ -8,6 +9,16 @@ import { init2048Game } from './games/2048/index.js';
 import { initMemoryGame } from './games/memory/index.js';
 
 const GAMES = [
+  {
+    id: 'village',
+    title: '日出村庄：农场探险 (Sunrise Village)',
+    category: 'casual',
+    badge: '🌟 官方复刻',
+    bgClass: 'snake-bg',
+    icon: '👨‍🌾',
+    desc: '深度复刻 InnoGames 爆款游戏 Sunrise Village！消耗能量探险砍树、凿石搜集资源、修复破旧木桥解锁雪山，重建村庄农舍。',
+    initFn: initVillageGame
+  },
   {
     id: 'suika',
     title: '合成大西瓜 (Suika Planet Merge)',
