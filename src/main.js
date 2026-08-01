@@ -1,10 +1,21 @@
 import { ui } from './core/ui.js';
 import { storage } from './core/storage.js';
+import { initSurvivorGame } from './games/survivor/index.js';
 import { initSnakeGame } from './games/snake/index.js';
 import { init2048Game } from './games/2048/index.js';
 import { initMemoryGame } from './games/memory/index.js';
 
 const GAMES = [
+  {
+    id: 'survivor',
+    title: '赛博割草者 (Cyber Swarm)',
+    category: 'action',
+    badge: '🔥 肉鸽热游',
+    bgClass: 'fusion-bg',
+    icon: '🚀',
+    desc: '极简弹幕割草肉鸽！自动射击敌人蜂群，升级解锁 3 选 1 炫彩武器与局外天赋强化。',
+    initFn: initSurvivorGame
+  },
   {
     id: 'snake',
     title: '霓虹贪吃蛇 (Cyber Snake)',
