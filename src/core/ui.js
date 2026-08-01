@@ -44,6 +44,13 @@ class UIManager {
       if (this.modalOverlay) {
         this.modalOverlay.classList.toggle('is-fullscreen', isFS);
       }
+      this.adjustGameScale();
+    });
+
+    window.addEventListener('resize', () => {
+      if (document.fullscreenElement) {
+        this.adjustGameScale();
+      }
     });
 
     if (this.soundBtn) {
@@ -60,6 +67,29 @@ class UIManager {
         }
       }
     });
+  }
+
+  adjustGameScale() {
+    const isFS = !!document.fullscreenElement;
+    const content = this.modalContent;
+    if (!content) return;
+
+    const gameTarget = content.querySelector('.game-canvas-wrapper, .suika-wrapper, .village-wrapper');
+    if (!gameTarget) return;
+
+    if (isFS) {
+      const availW = window.innerWidth * 0.94;
+      const availH = (window.innerHeight - 75) * 0.94;
+      const baseW = 600;
+      const baseH = 540;
+
+      const scale = Math.min(availW / baseW, availH / baseH);
+      gameTarget.style.transform = `scale(${Math.max(1.1, scale)})`;
+      gameTarget.style.transformOrigin = 'center center';
+    } else {
+      gameTarget.style.transform = '';
+      gameTarget.style.transformOrigin = '';
+    }
   }
 
   toggleFullscreen() {

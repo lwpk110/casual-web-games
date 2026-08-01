@@ -439,7 +439,17 @@ body {
 .game-overlay.is-fullscreen .game-modal-content {
   flex-grow: 1;
   height: calc(100vh - 65px);
-  padding: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.game-canvas-wrapper,
+.suika-wrapper,
+.village-wrapper {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .game-modal-header {
