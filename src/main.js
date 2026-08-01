@@ -1,11 +1,22 @@
 import { ui } from './core/ui.js';
 import { storage } from './core/storage.js';
+import { initPhaserShooterGame } from './games/phaser-shooter/index.js';
 import { initSurvivorGame } from './games/survivor/index.js';
 import { initSnakeGame } from './games/snake/index.js';
 import { init2048Game } from './games/2048/index.js';
 import { initMemoryGame } from './games/memory/index.js';
 
 const GAMES = [
+  {
+    id: 'phaser-shooter',
+    title: '赛博星际战机 (Phaser 3)',
+    category: 'action',
+    badge: '⚡ Phaser3 引擎',
+    bgClass: 'memory-bg',
+    icon: '⚡',
+    desc: '使用行业标杆 Phaser 3 游戏框架打造！拥有 WebGL 硬件加速、Arcade 物理碰撞与星空视差滚动。',
+    initFn: initPhaserShooterGame
+  },
   {
     id: 'survivor',
     title: '赛博割草者 (Cyber Swarm)',

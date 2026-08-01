@@ -2,14 +2,15 @@
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![GitHub Pages](https://img.shields.io/badge/deployment-GitHub%20Pages-brightgreen.svg)
-![HTML5](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20ES6+-orange.svg)
+![HTML5](https://img.shields.io/badge/Stack-HTML5%20%7C%20Phaser%203%20%7C%20ES6+-orange.svg)
 
-专门用于制作、展示与拓展**休闲网页游戏**的开源工作室仓库。采用现代暗黑玻璃拟态 (Glassmorphism) 视觉设计，无需依赖庞大的框架，零加载即开即玩。
+专门用于制作、展示与拓展**休闲网页游戏**的开源工作室仓库。引入标杆级 **Phaser 3 游戏引擎**，结合现代暗黑玻璃拟态 (Glassmorphism) 视觉设计，零加载即开即玩。
 
 ---
 
 ## 🌟 平台特色
 
+- **Phaser 3 标杆引擎支持**: 完美整合行业流行 2D 游戏引擎 Phaser 3 (https://github.com/phaserjs/phaser)，原生 WebGL 硬件加速与 Arcade 物理机制。
 - **零依赖极速加载**: 纯原生 HTML5, ES6 Modules 与 CSS3 打造。
 - **暗黑霓虹视觉**: 具备视觉冲击力的现代 UI 与微动画。
 - **Web Audio 纯代码音效**: 内置原生 Web Audio API 音效合成引擎，无需外挂音频资源文件。
